@@ -1,0 +1,21 @@
+<div class="container user-detail">
+  <h2>Detalles del Usuario</h2>
+  @if (user) {
+    <div class="user-info">
+      <p><strong>Nombre:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+      <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+    <div class="user-image">
+      <img [src]="user.image" alt="Imagen de {{ user.first_name }}" class="img-fluid"
+       style="width: 150px; height: 150px; object-fit: cover;">
+    </div>
+    <div class="actions">
+      <button (click)="deleteUser(user.id)" class="btn btn-danger">Eliminar</button>
+      <button (click)="updateUser()" class="btn btn-primary">Actualizar</button>
+      <button (click)="goBack()" class="btn btn-primary">Volver al listado</button>
+    </div>
+  } @else {
+    <p>Cargando detalles del usuario...</p>
+  }
+</div>

@@ -1,0 +1,2 @@
+receta pollo:
+---asar un pollo

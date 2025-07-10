@@ -1,0 +1,26 @@
+<div class="blog-container">
+    <h2>Sistema Blogging en Angular</h2>
+    <form (ngSubmit)="agregarNoticia()">
+      <label>Título:</label>
+      <input type="text" [(ngModel)]="nuevaNoticia.titulo" name="titulo" required />
+  
+      <label>URL de la Imagen:</label>
+      <input type="text" [(ngModel)]="nuevaNoticia.imagen" name="imagen" required />
+  
+      <label>Texto:</label>
+      <input type="text" [(ngModel)]="nuevaNoticia.texto" name="texto" required />
+  
+      <label>Fecha:</label>
+      <input type="date" [(ngModel)]="nuevaNoticia.fecha" name="fecha" required />
+  
+      <button type="submit">Publicar</button>
+    </form>
+  
+    <h2>Listado de Noticias</h2>
+    <div class="noticia" *ngFor="let noticia of noticias">
+      <h3>{{ noticia.titulo }}</h3>
+      <img [src]="noticia.imagen" alt="Imagen de la noticia" />
+      <p>{{ noticia.texto }}</p>
+      <small>Publicado el: {{ noticia.fecha }}</small>
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+.form {
+    padding: 0px 25px;
+  }
+  
+  .form div {
+    margin: 10px 0px;
+  }
+  
+  input {
+    display: block;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  button {
+    padding: 10px;
+  }

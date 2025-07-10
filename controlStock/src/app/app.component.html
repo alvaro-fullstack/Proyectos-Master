@@ -1,0 +1,19 @@
+<header>
+  <h1>Control de stock</h1>
+</header>
+<main>
+  <aside>
+    <!-- formulario -->
+    <app-product-form (sendProduct)="getDataForm($event)"></app-product-form>
+  </aside>
+  <div class="content">
+    <section>
+      <!-- lista productos -->
+      <app-product-list [products]="productsList"></app-product-list>
+    </section>
+    <section>
+      <!-- total  -->
+      <app-total [products]="productsList"></app-total>
+    </section>
+  </div>
+</main>

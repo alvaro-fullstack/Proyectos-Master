@@ -1,0 +1,21 @@
+header{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 5px solid tomato;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+main .content {
+width: 100%;
+}
+
+main aside {
+    width: 100%;
+}

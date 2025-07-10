@@ -1,0 +1,127 @@
+### Variables
+@baseUrl = http://localhost:3000/api
+@contentType = application/json
+
+### 1. Crear Autores
+POST {{baseUrl}}/author
+Content-Type: {{contentType}}
+
+{
+  "name": "Juan Pérez",
+  "email": "juan@example.com",
+  "image": "https://example.com/juan.jpg"
+}
+
+###
+
+POST {{baseUrl}}/author
+Content-Type: {{contentType}}
+
+{
+  "name": "María García",
+  "email": "maria@example.com",
+  "image": "https://example.com/maria.jpg"
+}
+
+###
+
+POST {{baseUrl}}/author
+Content-Type: {{contentType}}
+
+{
+  "name": "Carlos López",
+  "email": "carlos@example.com",
+  "image": "https://example.com/carlos.jpg"
+}
+
+### 2. Obtener todos los autores
+GET {{baseUrl}}/author
+
+### 3. Obtener un autor específico
+GET {{baseUrl}}/author/4
+
+### 4. Crear Posts
+POST {{baseUrl}}/post
+Content-Type: {{contentType}}
+
+{
+  "title": "Introducción a Node.js",
+  "description": "Aprende los fundamentos de Node.js y cómo empezar.",
+  "category": "Tecnología",
+  "author_id": 1
+}
+
+###
+
+POST {{baseUrl}}/post
+Content-Type: {{contentType}}
+
+{
+  "title": "Recetas saludables",
+  "description": "5 recetas fáciles y saludables para el día a día.",
+  "category": "Cocina",
+  "author_id": 2
+}
+
+###
+
+POST {{baseUrl}}/post
+Content-Type: {{contentType}}
+
+{
+  "title": "Viajar con poco presupuesto",
+  "description": "Consejos para viajar por el mundo sin gastar mucho dinero.",
+  "category": "Viajes",
+  "author_id": 3
+}
+
+###
+
+POST {{baseUrl}}/post
+Content-Type: {{contentType}}
+
+{
+  "title": "ExpressJS avanzado",
+  "description": "Técnicas avanzadas para desarrollar APIs con ExpressJS.",
+  "category": "Tecnología",
+  "author_id": 4
+}
+
+### 5. Obtener todos los posts
+GET {{baseUrl}}/post
+
+### 6. Obtener un post específico
+GET {{baseUrl}}/post/1
+
+### 7. Obtener posts por categoría
+GET {{baseUrl}}/post/category/Tecnología
+
+### 8. Obtener posts de un autor específico
+GET {{baseUrl}}/author/1/posts
+
+### 9. Actualizar un post
+PUT {{baseUrl}}/post/1
+Content-Type: {{contentType}}
+
+{
+  "title": "Introducción a Node.jsss (Actualizado)",
+  "description": "Aprende los fundamentos de Node.js y cómo empezar. Nueva información añadida.",
+  "category": "Tecnología",
+  "author_id": 2
+}
+
+### 10. Eliminar un post
+DELETE {{baseUrl}}/post/1
+
+### 11. Actualizar un autor
+PUT {{baseUrl}}/author/2
+Content-Type: {{contentType}}
+
+{
+  "name": "María García Rodríguez",
+  "email": "maria.garcia@example.com",
+  "image": "https://example.com/maria-garcia.jpg"
+}
+
+### 12. Eliminar un autor
+DELETE {{baseUrl}}/author/3
