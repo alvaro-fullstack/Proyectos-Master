@@ -1,0 +1,378 @@
+/* RESET */
+/***
+    The new CSS reset - version 1.8.4 (last updated 14.2.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+/*
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+*/
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+
+/* COMMON */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #27272a;
+}
+
+.wrapper {
+    max-width: 1440px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.heading-7,
+.heading-5,
+.heading-3 {
+    font-weight: 700;
+}
+
+.heading-3 {
+    font-size: 1.375rem;
+    line-height: 1.625rem;
+}
+
+.heading-5 {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+}
+
+.heading-7 {
+    font-size: 2.875rem;
+    line-height: 3.375rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #D4D4D8;
+    background-color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #999999;
+    color: #ffffff;
+}
+
+.btn--primary {
+    background-color: #3B82F6;
+    color: #ffffff;
+    border-color: #1E40AF;
+}
+
+.btn--primary:hover {
+    background-color: #1E40AF;
+}
+
+.img-responsive {
+    max-width: 100%;
+}
+
+.text-important {
+    color: #e60000;
+    text-transform: uppercase;
+}
+
+.card {
+    padding: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+}
+
+.pill {
+    font-size: .9rem;
+    border-radius: 4px;
+    display: inline-flex;
+    padding: 4px 6px;
+}
+
+.pill--1 {
+    background-color: #e60000;
+    color: #ffffff;
+}
+
+.pill--2 {
+    background-color: #1E40AF;
+    color: #ffffff;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 6px;
+    background: green;
+    color: #ffffff;
+}
+
+/* HEADER */
+
+.header {
+    border-bottom: 1px solid #cccccc;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__w-menu {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .header__w-menu {
+        display: block;
+    }
+}
+
+.header__menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Main article */
+
+.main-article {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+@media (min-width: 1024px) {
+    .main-article {
+        flex-direction: row;
+    }
+}
+
+.main-article__w-img {
+    flex-basis: 40%
+}
+
+.main-article__w-w-img {
+    position: relative;
+}
+
+.main-article__img-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.main-article__w-content {
+    flex-basis: 60%;
+}
+
+.main-article__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.main-article__w-description p {
+    margin-bottom: 1rem;
+}
+
+.main-article__w-description p:last-child {
+    margin-bottom: 0;
+}
+
+.main-article__w-price {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+    .main-article__w-price {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.main-article__features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+@media (min-width: 1024px) {
+    .main-article__features {
+        flex-direction: row;
+    }
+}
+
+.main-article__w-feature {
+    flex-basis: 33%;
+}
+
+.main-article__feature {
+    display: flex;
+    gap: 16px;
+}
+
+.main-article__feature-img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Accesories */
+
+.accessories {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.accessories__title {
+    margin-bottom: 20px;
+}
+
+.accessories__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 1024px) {
+    .accessories__inner {
+        flex-direction: row;
+    }
+}
+
+.accesories__w-accesory {
+    flex-basis: 25%;
+}
+
+.accesory {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+/* Raffle */
+
+.raffle {
+    display: flex;
+    flex-direction: column;
+    background-color: #EFF6FF;
+    padding: 32px;
+    gap: 32px;
+}
+
+@media (min-width: 1024px) {
+    .raffle {
+        flex-direction: row;
+    }
+}
+
+.raffle__w-content {
+    flex-basis: 70%;
+}
+
+.raffle__w-content p {
+    margin-bottom: 16px;
+}
+
+.raffle__w-content p:last-child {
+    margin-bottom: 0;
+}
+
+.raffle__w-form {
+    flex-basis: 30%;
+}
+
+/* raffle-form */
+
+.raffle-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.raffle-form__w-control {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.raffle-form__input {
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.raffle-form__send-button {
+    align-self: flex-start;
+}
+
+/* Footer */
+
+.footer {
+    border-top: 1px solid #cccccc;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: center;
+}
